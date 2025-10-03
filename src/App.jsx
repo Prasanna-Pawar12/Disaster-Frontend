@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import DisasterForm from "./components/DisasterForm";
-import OfferHelpForm from "./components/OfferHelpForm";
+import OfferHelpForm from "./components/offerHelpForm";
 import DisasterList from "./components/DisasterList";
 import "./App.css";
 
