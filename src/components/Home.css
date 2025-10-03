@@ -1,0 +1,22 @@
+.home {
+  padding: 20px;
+  text-align: center;
+}
+
+.home-info {
+  background: #e6f2ff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-info h3 {
+  color: #004d99;
+}
+
+.home-info p {
+  margin-top: 10px;
+}
