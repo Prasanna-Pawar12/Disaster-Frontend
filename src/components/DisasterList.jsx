@@ -1,14 +1,25 @@
+// src/components/DisasterList.jsx
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./DisasterList.css";
+
+// 🔹 Replace this with your actual Render backend URL
+const BASE_URL = "https://your-backend-name.onrender.com";
 
 function DisasterList() {
   const [helpRequests, setHelpRequests] = useState([]);
   const [volunteers, setVolunteers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/help").then(res => setHelpRequests(res.data));
-    axios.get("http://localhost:5000/api/users").then(res => setVolunteers(res.data));
+    // Fetch active help requests
+    axios.get(`${BASE_URL}/api/help`)
+      .then(res => setHelpRequests(res.data))
+      .catch(err => console.error("Error fetching help requests:", err));
+
+    // Fetch volunteers
+    axios.get(`${BASE_URL}/api/users`)
+      .then(res => setVolunteers(res.data))
+      .catch(err => console.error("Error fetching volunteers:", err));
   }, []);
 
   return (
