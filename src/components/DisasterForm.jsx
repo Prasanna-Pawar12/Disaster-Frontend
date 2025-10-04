@@ -1,8 +1,10 @@
 // src/components/DisasterForm.jsx
-import { BASE_URL } from "../config";
 import { useState } from "react";
 import axios from "axios";
 import "./DisasterForm.css";
+
+// 🔹 Replace this with your actual Render backend URL
+const BASE_URL = "https://your-backend-name.onrender.com";
 
 function DisasterForm() {
   const [formData, setFormData] = useState({
@@ -18,7 +20,6 @@ function DisasterForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Use BASE_URL so that everyone can configure their backend easily
       await axios.post(`${BASE_URL}/api/help`, formData);
       alert("✅ Help request submitted!");
       setFormData({ name: "", location: "", need: "" });
